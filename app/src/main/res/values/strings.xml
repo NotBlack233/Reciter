@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Reciter</string>
+    <string name="select_file">Select File</string>
+    <string name="input_text">… Or input text directly</string>
+    <string name="next_phase">Next Phase</string>
+    <string name="reset_phase">Reset</string>
+    <string name="next_sentence">Next Sentence</string>
+    <string name="confirm">Confirm</string>
+    <string name="input_text_first">Input and confirm your text first!</string>
+    <string name="last_sentence">Already the last sentence!</string>
+    <string name="last_phase">Already the last phase!</string>
+    <string name="input_empty">Input cannot be empty!</string>
+</resources>
