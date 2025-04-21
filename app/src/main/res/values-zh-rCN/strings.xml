@@ -11,4 +11,5 @@
     <string name="last_sentence">已经是最后一句！</string>
     <string name="last_phase">已经是最后一阶段！</string>
     <string name="input_empty">输入不能为空！</string>
+    <string name="clear_input">清空</string>
 </resources>

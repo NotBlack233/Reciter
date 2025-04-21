@@ -2,7 +2,6 @@ package me.not_black.reciter
 
 import android.app.Activity
 import android.content.Intent
-import android.net.Uri
 import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.ComponentActivity
@@ -14,14 +13,15 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.ExperimentalLayoutApi
 import androidx.compose.foundation.layout.FlowRow
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.sizeIn
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Button
-import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextField
 import androidx.compose.runtime.Composable
@@ -105,13 +105,20 @@ fun ReciterApp() {
                 .fillMaxWidth(0.95f)
                 .height(128.dp)
         )
-        TextButton(R.string.confirm, modifier = Modifier
-            .fillMaxWidth()
-            .padding(8.dp)) {
-            if (inputText.isNotEmpty())
-                wrapper = ReciteWrapper(inputText)
-            else
-                MainActivity.simpleToast(R.string.input_empty)
+        Row (horizontalArrangement = Arrangement.Center, modifier = Modifier.fillMaxWidth()) {
+            TextButton(R.string.clear_input, modifier = Modifier
+                .padding(8.dp)
+                .sizeIn(minWidth = 100.dp)) {
+                inputText = ""
+            }
+            TextButton(R.string.confirm, modifier = Modifier
+                .padding(8.dp)
+                .fillMaxWidth()) {
+                if (inputText.isNotEmpty())
+                    wrapper = ReciteWrapper(inputText)
+                else
+                    MainActivity.simpleToast(R.string.input_empty)
+            }
         }
         FlowRow (horizontalArrangement = Arrangement.Center, modifier = Modifier
             .fillMaxWidth()
@@ -156,7 +163,7 @@ fun ReciterApp() {
 @Preview(showBackground = true)
 @Composable
 fun ReciterAppPreview() {
-
+    ReciterApp()
 }
 
 @Composable
